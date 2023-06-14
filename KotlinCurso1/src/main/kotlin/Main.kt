@@ -1,21 +1,31 @@
 fun main() {
-    println("Bem vindo ao Bytebank")
+    var contaAlex = Conta()
 
-    for (i in 5 downTo 1 step 2) {
+    contaAlex.deposita(50.0)
+    println("${contaAlex.saldo}")
 
-        val titular: String = "Mauricio"
-        val numeroConta: Int = 1000 + i
-        var saldo = i + 10.0
+    contaAlex.saca(20.0)
+    println("${contaAlex.saldo}")
 
-        println("titular: $titular")
-        println("numero da conta: $numeroConta")
-        println("saldo da conta: $saldo")
-        println()
-    }
-
-    //testaCondicoes(saldo)
+    contaAlex.saca(40.0)
+    println("${contaAlex.saldo}")
 }
 
+class Conta {
+    var titular = ""
+    var numero = 0
+    var saldo = 0.0
+
+    fun deposita(valor: Double) {
+        this.saldo += valor
+    }
+
+    fun saca(valor: Double) {
+        if(this.saldo >= valor) {
+            saldo -= valor
+        }
+    }
+}
 
 fun testaCondicoes(saldo: Double) {
     when {
