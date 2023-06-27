@@ -10,5 +10,4 @@ class CalculadoraBonificacao {
     fun registra(funcionario: Funcionario) {
         this.total += funcionario.bonificacao
     }
-
 }
