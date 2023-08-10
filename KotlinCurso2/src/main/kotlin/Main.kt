@@ -1,3 +1,6 @@
+import main.kotlin.bigDecimalArrayOf
+import main.kotlin.media
+import main.kotlin.somatoria
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -21,24 +24,27 @@ fun main() {
         acumulator + (salario * meses).setScale(2, RoundingMode.UP)
     }
     println(gastoTotal)
+
+    val media = salariosComAumento
+        .sorted()
+        .takeLast(3)
+        .toTypedArray()
+        .media()
+    println(media)
+
+    val mediaMenoresSalarios = salariosComAumento
+        .sorted()
+        .take(3)
+        .toTypedArray()
+        .media()
+
+    println(mediaMenoresSalarios)
 }
 
-private fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal)
+fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal)
 : BigDecimal =
     if (salario < "5000".toBigDecimal()) {
         salario + "500".toBigDecimal()
     } else {
         (salario * aumento).setScale(2, RoundingMode.UP)
     }
-
-fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
-    return Array<BigDecimal>(valores.size) { i ->
-        valores[i].toBigDecimal()
-    }
-}
-
-fun Array<BigDecimal>.somatoria(): BigDecimal {
-    return this.reduce { acumulator, valor ->
-        acumulator + valor
-    }
-}
