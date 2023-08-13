@@ -1,6 +1,6 @@
-import main.kotlin.bigDecimalArrayOf
-import main.kotlin.media
-import main.kotlin.somatoria
+import main.kotlin.arrays.bigDecimalArrayOf
+import main.kotlin.arrays.media
+import main.kotlin.arrays.somatoria
 import java.math.BigDecimal
 import java.math.RoundingMode
 

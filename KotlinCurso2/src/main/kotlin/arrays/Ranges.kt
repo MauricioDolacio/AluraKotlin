@@ -1,4 +1,4 @@
-package main.kotlin
+package main.kotlin.arrays
 
 fun Ranges() {
     val serie: IntRange = 1.rangeTo(10)

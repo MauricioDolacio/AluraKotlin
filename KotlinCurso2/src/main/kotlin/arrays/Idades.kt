@@ -1,3 +1,5 @@
+package main.kotlin.arrays
+
 fun MaiorIdade() {
     //val idades = IntArray(5)
     //    idades[0] = 25
