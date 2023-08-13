@@ -1,10 +1,10 @@
-import main.kotlin.arrays.bigDecimalArrayOf
-import main.kotlin.arrays.media
-import main.kotlin.arrays.somatoria
+package main.kotlin.arrays
+
 import java.math.BigDecimal
 import java.math.RoundingMode
 
-fun main() {
+
+fun testaBigDecimals() {
     val salarios = bigDecimalArrayOf("1500.55", "2000.00", "5000.00", "10000.00")
 
     println(salarios.contentToString())
@@ -40,11 +40,3 @@ fun main() {
 
     println(mediaMenoresSalarios)
 }
-
-fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal)
-: BigDecimal =
-    if (salario < "5000".toBigDecimal()) {
-        salario + "500".toBigDecimal()
-    } else {
-        (salario * aumento).setScale(2, RoundingMode.UP)
-    }
